@@ -37,7 +37,8 @@ function repoInformationHTML(repos) {
 }
 
 function fetchGitHubInformation(event) {
-
+    $("#gh-user-data").html(""); //empty the previous user profile
+    $("#gh-repo-data").html(""); //empty the previous user profile
     var username = $("#gh-username").val();
     if (!username) {
         $("#gh-user-data").html(`<h2>Please enter a GitHub username</h2>`);
@@ -70,3 +71,5 @@ function fetchGitHubInformation(event) {
             }
         });
 }
+
+$(document).ready(fetchGitHubInformation); //octocat profile is automatically displayed when the page is loaded
